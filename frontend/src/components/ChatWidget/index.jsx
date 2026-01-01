@@ -1,13 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Get API URL from environment variable (falls back to localhost for development)
-// Note: Docusaurus doesn't support runtime env vars like CRA, so we use build-time vars
-// or fallback to hardcoded localhost for development
-const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
-    ? 'http://localhost:8000'
-    : (process.env.DOCUSAURUS_API_URL || 'https://asim1112-humanoid-robotics-hackathon.hf.space');
+// Function to get API URL dynamically at runtime (not build time)
+// This ensures the correct URL is used based on where the app is actually running
+const getApiBaseUrl = () => {
+    if (typeof window === 'undefined') {
+        // During SSR, return a default (won't be used since ChatWidget doesn't render during SSR)
+        return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
+    }
+
+    // Runtime detection: check actual hostname in the browser
+    const isLocalhost = window.location.hostname === 'localhost' ||
+                       window.location.hostname === '127.0.0.1' ||
+                       window.location.hostname === '';
+
+    if (isLocalhost) {
+        return 'http://localhost:8000';
+    }
+
+    // Production: use Hugging Face backend
+    return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
+};
 
 export default function ChatWidget() {
+    const API_BASE_URL = getApiBaseUrl();
     const [messages, setMessages] = useState([]);
     const [sessionId, setSessionId] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
