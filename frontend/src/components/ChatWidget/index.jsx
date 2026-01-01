@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // or fallback to hardcoded localhost for development
 const API_BASE_URL = typeof window !== 'undefined' && window.location.hostname === 'localhost'
     ? 'http://localhost:8000'
-    : (process.env.DOCUSAURUS_API_URL || 'http://localhost:8000');
+    : (process.env.DOCUSAURUS_API_URL || 'https://asim1112-humanoid-robotics-hackathon.hf.space');
 
 export default function ChatWidget() {
     const [messages, setMessages] = useState([]);

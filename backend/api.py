@@ -19,7 +19,8 @@ app = FastAPI(lifespan=db_lifespan)
 CORS_ORIGINS = [
     "http://localhost:3000",  # Docusaurus dev server
     "http://localhost:5173",  # Alternative dev port
-    os.getenv("FRONTEND_URL", "https://your-site.vercel.app")
+    "https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app",  # Production frontend
+    os.getenv("FRONTEND_URL", "https://your-site.vercel.app")  # Additional custom frontend URL
 ]
 
 app.add_middleware(
