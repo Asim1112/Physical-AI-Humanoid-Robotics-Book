@@ -3,11 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 // Function to get API URL dynamically at runtime (not build time)
 // This ensures the correct URL is used based on where the app is actually running
 const getApiBaseUrl = () => {
+    // During SSR, always return production URL (ChatWidget won't render during SSR anyway)
     if (typeof window === 'undefined') {
-        // During SSR, return a default (won't be used since ChatWidget doesn't render during SSR)
-        return window.location.hostname === "localhost"
-            ? "http://localhost:8000"
-            : "https://asim1112-humanoid-robotics-hackathon.hf.space";
+        return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
     }
 
     // Runtime detection: check actual hostname in the browser
