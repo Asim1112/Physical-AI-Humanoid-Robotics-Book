@@ -5,7 +5,9 @@ import React, { useState, useEffect, useRef } from 'react';
 const getApiBaseUrl = () => {
     if (typeof window === 'undefined') {
         // During SSR, return a default (won't be used since ChatWidget doesn't render during SSR)
-        return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
+        return window.location.hostname === "localhost"
+            ? "http://localhost:8000"
+            : "https://asim1112-humanoid-robotics-hackathon.hf.space";
     }
 
     // Runtime detection: check actual hostname in the browser
