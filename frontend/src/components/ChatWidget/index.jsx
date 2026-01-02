@@ -3,10 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 // Function to get API URL dynamically at runtime (not build time)
 // This ensures the correct URL is used based on where the app is actually running
 const getApiBaseUrl = () => {
-    return window.location.hostname === "localhost"
-        ? "http://localhost:8000"
-        : "https://asim1112-humanoid-robotics-hackathon.hf.space";
+    return "https://asim1112-humanoid-robotics-hackathon.hf.space";
 };
+
 
 
 export default function ChatWidget() {
