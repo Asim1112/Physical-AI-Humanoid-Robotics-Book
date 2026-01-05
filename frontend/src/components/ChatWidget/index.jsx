@@ -14,7 +14,7 @@ const getApiBaseUrl = () => {
                        window.location.hostname === '';
 
     if (isLocalhost) {
-        return 'http://localhost:8000';
+        return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
     }
 
     // Production: use Hugging Face backend
