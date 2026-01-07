@@ -10,7 +10,7 @@ Interactive educational resource for Physical AI and Humanoid Robotics with RAG-
 
 ## 🚀 Live Demo
 
-- **Frontend (Vercel):** https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app/
+- **Frontend (GitHub Pages):** https://asim1112.github.io/Physical-AI-Humanoid-Robotics-Book/
 - **Backend API (Hugging Face):** https://asim1112-humanoid-robotics-hackathon.hf.space/
 - **API Documentation:** https://asim1112-humanoid-robotics-hackathon.hf.space/docs
 - **Repository:** https://github.com/Asim1112/Physical-AI-Humanoid-Robotics-Book.git
@@ -24,13 +24,13 @@ This project provides an interactive learning platform for Physical AI and Human
 - **Interactive Documentation** - Built with Docusaurus 2.0
 - **Persistent Conversations** - Chat sessions maintained across page navigation
 - **Selected-Text Mode** - Highlight text and ask contextual questions
-- **Production Ready** - Deployed on Vercel (frontend) + Hugging Face (backend)
+- **Production Ready** - Deployed on Github pages (frontend) + Hugging Face (backend)
 
 ## 🚀 Quick Start
 
 ### Try the Chat Interface
 
-1. Visit https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app/
+1. Visit https://asim1112.github.io/Physical-AI-Humanoid-Robotics-Book/
 2. Click the green chat button (💬) in the bottom-right corner
 3. Ask a question: "What is Gazebo simulation?" or "Explain ROS 2 nodes"
 4. **Selected-text mode**: Highlight any text → Ask "Explain this in simpler terms"
@@ -91,7 +91,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for production deployment guide.
 The backend implements a complete RAG (Retrieval-Augmented Generation) system:
 
 **Spec 1: Content Ingestion** ✅
-1. **Deployment (US1)**: Deploys Docusaurus frontend to Vercel automatically
+1. **Deployment (US1)**: Deploys Docusaurus frontend to Github pages automatically
 2. **Embedding Generation (US2)**: Chunks markdown files and generates 1024-dim embeddings using Cohere
 3. **Vector Storage (US3)**: Stores embeddings in Qdrant Cloud for semantic search
 
@@ -104,7 +104,7 @@ The backend implements a complete RAG (Retrieval-Augmented Generation) system:
 1. **Interactive Chat Widget (US1)**: Embedded chat interface with real-time Q&A
 2. **Session Persistence (US2)**: Conversations persist across page navigation (24-hour retention)
 3. **Selected-Text Mode (US3)**: Highlight text for contextual questions
-4. **Production Deployment (US4)**: Docker backend on Hugging Face + Vercel frontend
+4. **Production Deployment (US4)**: Docker backend on Hugging Face + Github pages frontend
 
 **Performance Metrics:**
 - 1,278 vectors indexed across 43 textbook modules
@@ -117,7 +117,7 @@ The backend implements a complete RAG (Retrieval-Augmented Generation) system:
 
 ### Frontend Documentation Site
 
-Built with Docusaurus 2.0, hosted on Vercel with automatic deployment. Features custom chat widget with real-time RAG integration.
+Built with Docusaurus 2.0, hosted on Github pages with automatic deployment. Features custom chat widget with real-time RAG integration.
 
 ## Prerequisites
 
@@ -261,11 +261,11 @@ Use the interactive Swagger UI at http://localhost:8000/docs to test all endpoin
 
 ## Deployment
 
-### Frontend (Vercel)
+### Frontend (GitHub Pages)
 
-Deployed automatically via Vercel:
-- **Live URL:** https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app/
-- Pushes to `main` branch trigger automatic deployment
+Deployed via GitHub Pages:
+- **Live URL:** https://asim1112.github.io/Physical-AI-Humanoid-Robotics-Book/
+- See [GITHUB_PAGES_DEPLOYMENT.md](./frontend/GITHUB_PAGES_DEPLOYMENT.md) for deployment instructions
 
 ### Backend (Hugging Face Spaces)
 
@@ -350,7 +350,7 @@ python init_db.py
 - Custom ChatWidget component
 
 **Deployment:**
-- Vercel (Frontend)
+- Github pages (Frontend)
 - Hugging Face Spaces (Backend)
 - GitHub Actions (CI/CD)
 
@@ -393,5 +393,5 @@ Built with ❤️ for the Physical AI and Humanoid Robotics community.
 - OpenAI for the Agents SDK
 - Cohere for embedding models
 - Qdrant for vector search
-- Vercel for frontend hosting
+- Github for frontend hosting
 - Hugging Face for backend hosting

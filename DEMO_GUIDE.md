@@ -10,7 +10,7 @@
 
 ### 1. Show the Homepage (30 seconds)
 
-**Navigate to:** https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app/
+**Navigate to:** https://asim1112.github.io/Physical-AI-Humanoid-Robotics-Book/
 
 **Say:** "This is a Docusaurus-based textbook covering Physical AI and Humanoid Robotics. What makes it special is the intelligent chat interface powered by RAG technology."
 
@@ -101,7 +101,7 @@
 - Session persistence with localStorage + database
 
 **Deployment:**
-- Frontend: Vercel (automatic deployments)
+- Frontend: Github pages (automatic deployments)
 - Backend: Hugging Face Spaces (Docker)
 - Database: Neon Serverless Postgres (free tier)
 - Vector DB: Qdrant Cloud (1GB free tier)
@@ -124,7 +124,7 @@
    - Max 5000 characters with auto-truncation
 
 4. **Production-Ready Deployment**
-   - Zero-cost hosting (Vercel free + HF Spaces free)
+   - Zero-cost hosting (Github pages free + HF Spaces free)
    - Docker containerization
    - Environment-based configuration
    - CORS security configured
@@ -187,14 +187,14 @@ A: Each user gets a unique session ID stored in localStorage and the database. C
 
 **Q: What's the cost to run this?**
 A: Currently $0/month using free tiers:
-- Vercel (Hobby): Free
+- Github pages (Hobby): Free
 - HF Spaces (CPU): Free
 - Neon Postgres: Free tier
 - Qdrant Cloud: 1GB free
 - GROQ API: Free tier
 
 **Q: Can it handle production load?**
-A: The free tier handles ~50 concurrent users. For scale, upgrade to Vercel Pro ($20/mo) and HF Spaces GPU (~$0.60/hour).
+A: The free tier handles ~50 concurrent users. For scale, upgrade to Github pages Pro ($20/mo) and HF Spaces GPU (~$0.60/hour).
 
 ---
 
@@ -228,7 +228,7 @@ Prepare screenshots of:
 
 **Technical Execution:**
 - Full-stack application (FastAPI + React)
-- Production deployment (Vercel + HF Spaces)
+- Production deployment (Github pages + HF Spaces)
 - Database integration (Postgres + Qdrant)
 - API design with proper error handling
 
@@ -251,6 +251,6 @@ Prepare screenshots of:
 
 ---
 
-**Demo URL:** https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app/
+**Demo URL:** https://asim1112.github.io/Physical-AI-Humanoid-Robotics-Book/
 **API Docs:** https://asim1112-humanoid-robotics-hackathon.hf.space/docs
 **Repository:** https://github.com/Asim1112/Physical-AI-Humanoid-Robotics-Book.git

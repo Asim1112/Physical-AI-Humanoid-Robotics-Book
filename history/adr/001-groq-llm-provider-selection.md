@@ -187,9 +187,6 @@ The original Qwen/OpenRouter specification could not be implemented because the 
 - Model: `llama-3.3-70b-versatile`
 - Base URL: `https://api.groq.com/openai/v1`
 
-**.env**:
-- Added: `GROQ_API_KEY=***********************************************************************`
-
 ---
 
 ## Validation

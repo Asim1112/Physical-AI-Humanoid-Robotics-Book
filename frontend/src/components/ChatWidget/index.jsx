@@ -1,24 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// Function to get API URL dynamically at runtime (not build time)
-// This ensures the correct URL is used based on where the app is actually running
+// Function to get API URL from environment variable or fallback to default
+// This allows configuration for different deployment environments
 const getApiBaseUrl = () => {
-    // During SSR, always return production URL (ChatWidget won't render during SSR anyway)
+    // During SSR, return a default value (ChatWidget won't render during SSR anyway)
     if (typeof window === 'undefined') {
         return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
     }
 
-    // Runtime detection: check actual hostname in the browser
+    // At runtime, check for environment variable first, then fallback to default
+    // Use window.ENV if available (set by our env-config.js script)
+    const apiUrl = window.ENV?.VITE_API_URL || 'https://asim1112-humanoid-robotics-hackathon.hf.space';
+
+    // For local development, we can still fallback to localhost if needed
     const isLocalhost = window.location.hostname === 'localhost' ||
                        window.location.hostname === '127.0.0.1' ||
                        window.location.hostname === '';
 
-    if (isLocalhost) {
+    // Only use localhost for development if no custom API URL is set
+    if (isLocalhost && !window.ENV?.VITE_API_URL) {
         return 'http://localhost:8000';
     }
 
-    // Production: use Hugging Face backend
-    return 'https://asim1112-humanoid-robotics-hackathon.hf.space';
+    return apiUrl;
 };
 
 export default function ChatWidget() {

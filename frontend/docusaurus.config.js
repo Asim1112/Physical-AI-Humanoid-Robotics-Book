@@ -13,10 +13,10 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics-book-lilac-six.vercel.app',
+  url: 'https://asim1112.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub Pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Physical-AI-Humanoid-Robotics-Book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -52,6 +52,14 @@ const config = {
         },
       }),
     ],
+  ],
+
+  // Inject the environment configuration script
+  scripts: [
+    {
+      src: '/env-config.js',
+      defer: true,
+    },
   ],
 
 
